@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>sorting of array</title>
+</head>
+<body>
+	<script>
+		let n=parseInt(prompt("n:"));
+		let a=new Array(n);
+		for(let i=0;i<n;i++){
+			a[i]=parseInt(prompt("enter values"));
+		}
+		for(let i=0;i<n;i++){
+			for(let j=0;j<n-i-1;j++){
+				if(a[j]>a[j+1]){
+					let temp=parseInt(a[j]);
+					a[j]=parseInt(a[j+1]);
+					a[j+1]=parseInt(temp);
+				}
+			}
+		}console.log(a);
+	</script>
+</body>
+</html>

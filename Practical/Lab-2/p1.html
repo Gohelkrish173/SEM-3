@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Armstrong</title>
+	</head>
+<body>
+	<script type="text/javascript">
+		let n=parseInt(prompt("n:"));
+		let b=n;
+		let count=0;
+		let sum=0;
+		while(n>0){
+			let a=n%10;
+			count++;
+			n=parseInt(n/10);
+		}
+		n=b;
+		while(n>0){
+			a=n%10;
+			sum=sum+Math.pow(a,count);
+			a=1;
+			n=parseInt(n/10);
+		}
+		if(sum==b){
+			console.log("given number is armstrong");
+		}
+		else{
+			console.log("given number is non-armstrong");	
+		}
+	</script>
+</body>
+</html>

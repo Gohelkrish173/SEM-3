@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+            palindrome
+        </title>
+    </head>
+    <body>
+        <script>
+            let a=parseInt(prompt("a:"));
+            let b=a;
+            let ans=0;
+            for(i=0;a>0;i++){
+                temp=parseInt(a%10);
+                ans=ans*10+temp;
+                a=parseInt(a/10);
+            }
+            console.log(ans);
+            if(b==ans){
+                console.log("number is palindrome.");
+            }
+            else{
+                console.log("number is non-palindrome.");
+            }
+        </script>
+    </body>
+</html>

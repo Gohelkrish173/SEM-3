@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <title>
+            snake game
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        #myIMg{
+            position: absolute;
+            left:500px;
+            top:100px;
+            width:150px;
+            height:150px;
+        }
+        #khavanu{
+            position:absolute;
+            width:100px;
+            height: 50px;
+        }
+        body{
+            background-color: black;
+            color:red;
+        }
+    </style>
+    </head>
+
+<body onload="changeKhavanuPosition()">
+    <input type="button" value="Move Left" onclick="startLeft()" class="btn btn-warning">
+    <input type="button" value="Move Right" onclick="startRight()" class="btn btn-warning">
+    <input type="button" value="Move Top" onclick="startTop()" class="btn btn-warning">
+    <input type="button" value="Move Bottom" onclick="startBottom()" class="btn btn-warning">
+    <br/>
+
+    <image style="" src="snake1.png" id="myImg" />
+
+    <image src="apple.png" id="khavanu" />
+
+    <script type="text/javascript">
+
+        leftpos = 500;
+        rightInt = 0;
+        leftInt = 0;
+
+        toppos=100;
+        topInt=0;
+        bottomInt=0;
+
+        function changeKhavanuPosition(){
+            leftApple = Math.ceil(Math.random()*1300)+100;
+            topApple=Math.ceil(Math.random()*800)+100;
+            k=document.getElementById('khavanu');
+            k.style.left = leftApple+"px";
+            k.style.top=topApple+"px";
+        }
+        setInterval(changeKhavanuPosition,1000);
+
+        function startLeft(){
+            clearInterval(rightInt);
+            clearInterval(leftInt);
+            clearInterval(topInt);
+            clearInterval(bottomInt);
+            leftInt= setInterval(moveLeft,1);
+        }
+        function startRight(){
+            clearInterval(rightInt);
+            clearInterval(leftInt);
+            clearInterval(topInt);
+            clearInterval(bottomInt);
+            rightInt=setInterval(moveRight,1);
+        }
+        function startTop(){
+            clearInterval(rightInt);
+            clearInterval(leftInt);
+            clearInterval(topInt);
+            clearInterval(bottomInt);
+            topInt=setInterval(moveTop,1);
+        }
+        function startBottom(){
+            clearInterval(rightInt);
+            clearInterval(leftInt);
+            clearInterval(topInt);
+            clearInterval(bottomInt);
+            bottomInt=setInterval(moveBottom,1);
+        }
+        function moveLeft(){
+            leftpos--;
+            checkForKhvaigyu();
+            if(leftpos<0){
+                leftpos= screen.availWidth;
+            }
+            i=document.getElementById('myImg');
+            i.src="snake1.png";
+            i.style.left = leftpos+"px";
+        }   
+
+        function moveRight(){
+            leftpos++;
+            console.log();
+            checkForKhvaigyu();
+            if(leftpos>screen.availWidth){
+                leftpos=0;
+            }
+            i=document.getElementById('myImg');
+            i.src="snakeR.png";
+            i.style.left = leftpos+"px";
+        }
+        
+        function moveTop(){
+            toppos--;
+            checkForKhvaigyu();
+            if(toppos<0){
+                toppos= screen.availHeight;
+            }
+            i=document.getElementById('myImg');
+            i.src="snakeT.png";
+            i.style.top=toppos+"px";
+        }
+
+        function moveBottom(){
+            toppos++;
+            checkForKhvaigyu();
+            if(toppos>screen.availWidth-100){
+                toppos=0;
+            }
+            i=document.getElementById('myImg');
+            i.src="snakeB.png";
+            i.style.top=toppos+"px";
+        }
+
+        function checkForKhvaigyu(){
+            if(topApple==toppos && leftApple==leftpos){
+                document.write("<h1>Khavai gayu</h1>")
+            }
+        }
+
+        if(leftpos==leftApple || toppos==topApple){
+            count=count+1;
+        }
+        document.write("<div>"+count+"</div>");
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
