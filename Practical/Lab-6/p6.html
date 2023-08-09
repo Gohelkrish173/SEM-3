@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>Student Registration From</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .left1{
+            text-align:left;
+        }
+        .left2{
+            text-align:center;
+        }
+        .head{
+            border-bottom: 5px solid black;
+        }
+        .size{
+            font-size: 20px;
+        }
+    </style>
+    </head>
+<body align="center">
+    <h1 id="txt1" class="container col-3 head">Registration Form :-</h1>
+    <form>
+    <h5 id="txt2" class="container col-3 left1">Student Name:</h5>
+    <input id="txt3" type="text" class="container col-3" onfocus="change1()" oninput="insert1()" onblur="stop()" onkeyup >
+    
+    <h5 id="txt4" class="container col-3 left1">Gender:</h5>
+    <div class="container col-3 left1 size"><input id="txt5" type="checkbox" class="" Value="Male" >
+    <label id="txt5">Male</label>
+        
+    <input id="txt5" type="checkbox" class="" Value="Female" >
+    <label id="txt5">Female</label>
+    </div>
+    
+    <h5 id="txt6" class="container col-3 left1" >Birthdate :</h5>
+    <input type="date" id="txt7" class="container col-3" Value="">
+    
+    <h5 id="txt8" class="container col-3 left1">Persentile Of HSC:</h5>
+    <input id="txt9" type="text" class="container col-3" Value="" onchange="change2()" onblur="stop()">
+    
+    <h5 id="txt10" class="container col-3 left1">Age:</h5>
+    <input id="txt11" type="text" class="container col-3" Value="" >
+    
+    <h5 id="txt12" class="container col-3 left1">Mobile No:</h5>
+    <input id="txt13" type="text" class="container col-3" Value="" >
+    <input id="txt14" type="button" class="btn btn-secondary container col-3" Value="check" onclick="check1()"></br></br>
+    <input id="txt15" type="submit" class="btn btn-primary container col-1 left2" Value="Submit">
+    
+</form>
+
+    <script>
+        function fun(){
+            r=Math.ceil(Math.random()*255);
+            g=Math.ceil(Math.random()*255);
+            b=Math.ceil(Math.random()*255);
+            txt1.style.color="rgb("+r+","+g+","+b+")";
+            txt1.style.border="rgb("+r+","+g+","+b+")";
+        }
+
+        function change1(){
+            txt3.style.border="5px solid green";
+        }
+        function insert1(){
+            c=setInterval(fun(),500);
+        }
+        function stop(){
+            clearInterval(c);
+            txt3.style.border="5px solid black";
+        }
+        function change2(){
+            document.body.style.backgroundColor="blue";   
+        }
+        function check1(){
+            var c1=document.getElementById("txt13").value 
+            pattern1="^[0-9]{10}$";
+
+            var R=RegExp(pattern1);
+
+            if(R.test(c1)){
+                txt13.style.border="5px solid yellow";
+            }
+            else{
+                txt13.style.border="5px solid red";
+            }
+        }
+        
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

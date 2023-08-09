@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>practice</title>
+    </head>
+
+<body>
+    <script>
+        //ES6 classes
+        class polygone{
+            h=0;d=0;
+            constructor(h,d){
+                this.h=h;
+                this.d=d;
+            }
+            test(){
+                document.write(this.h+",");
+                document.write(this.d);
+            }
+        }
+        var poly1=new polygone(10,20);
+        poly1.test();
+    
+        //ES6 Object,Arrow function,foreach loop,spread
+    student1={
+        name:"krish",
+        sem:3,
+        dept:"cse"
+    }
+    student2={
+        name:"shyam",
+        sem:3,
+        dept:"cse"
+    }
+    
+
+    let {name,sem,dept}=student1
+    console.log(name);
+    console.log(sem);
+    console.log(dept);
+
+    var ans=(temp)=>{
+        console.log(student1);
+    }
+    ans();
+    
+    var A=[1,2,3,4,5];
+    A.forEach((fac)=>{console.log("ForEach",fac)});
+
+    var ANS=console.log([...A]);
+    
+    //ES6 Array functions
+    //includes
+    var X=['krish','mehul','nishita','pinal']
+    var y=X.includes('krish');
+    console.log(y);
+
+    //join
+
+    console.log(X.join("%"));
+
+    //map
+
+    var A=[1,2,3,4];
+    var a=A.map(myfunction);
+    console.log(a);
+
+    function myfunction(num){
+        return num*10;
+    };
+
+    //reduce
+    var total=[173,555,209];
+    var TOTAL=total.reduce(myfunct);
+
+    function myfunct(num){
+        return total+num
+    }
+    console.log(TOTAL);
+
+    //find
+
+    var age=[17,19,20,25,50];
+    checkage=(age)=>{
+        return age>18
+    }
+    var ans2=console.log(age.find(checkage));
+
+    //some and every
+    var ans3=age.some(checkage)
+    console.log(ans3);
+
+    var ans4=age.every(checkage);
+    console.log(ans4);
+
+    //filter
+
+    var ans5=age.filter(checkage1);
+    function checkage1(age){
+        return age<=18
+    }
+    console.log(ans5);
+    
+    //splice
+    ans6=age.splice(2);
+    console.log(ans6);
+    </script>
+</body>
+</html>

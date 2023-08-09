@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>
+            change property
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+<body align="center">
+    <h1 id="txt1" >Login Elements</h1>
+    <input type="text" class="container col-3" value="" id="ele1" onclick="change1()">
+    <input type="button" class="btn btn-dark container col-3" value="click" onclick="change1_1()"  id="butt"></br></br>
+    
+    
+    <p id="txt2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta fugiat quaerat aliquid alias hic, quo voluptas reprehenderit itaque esse. Nemo ipsa commodi provident temporibus iusto consequatur labore soluta ab voluptate.</p>
+    <p id="txt3">Lorem ip`sum dolor sit amet consectetur adipisicing elit. Eos placeat cupiditate voluptatem dignissimos! Illo autem adipisci quo expedita natus porro harum! Temporibus hic alias obcaecati eveniet autem impedit mollitia iste.</p>
+    <p id="txt4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum eius sed. Deserunt laudantium veniam expedita velit, autem maiores porro voluptates eligendi? Ipsam accusantium officia explicabo mollitia, laboriosam provident temporibus!</p>
+    <script>
+        t2=document.getElementb
+        function Color1(){
+            r=Math.ceil(Math.random()*255);
+            g=Math.ceil(Math.random()*255);
+            b=Math.ceil(Math.random()*255);
+            document.getElementById("txt2").style.color="rgb("+r+","+g+","+b+")";
+            document.getElementById("txt3").style.color="rgb("+r+","+g+","+b+")";
+            document.getElementById("txt4").style.color="rgb("+r+","+g+","+b+")";
+        }
+        function change1(){
+            c=setInterval(Color1,500);
+            
+        }
+        function change1_1(){
+            clearInterval(c);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

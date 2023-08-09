@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>find max and min number from array</title>
+    </head>
+<body>
+    <script>
+        let n=parseInt(prompt("n:"));
+        var a=new Array(n);
+        
+        for(let i=0;i<n;i++){
+            a[i]=parseInt(prompt("enter elements-"+(i+1)));
+        }
+        let max=a[0];
+        let min=a[0];
+
+        for(let i=1;i<n;i++){
+            if(max>a[i]){
+            }
+            else{
+                max=a[i];
+            }
+        }
+        console.log("maximum number:"+max);
+
+        for(let i=1;i<n;i++){
+            if(min<a[i]){
+            }
+            else{
+                min=a[i];
+            }
+        }
+        console.log("minimum number:"+min);
+    </script>
+</body>
+</html>

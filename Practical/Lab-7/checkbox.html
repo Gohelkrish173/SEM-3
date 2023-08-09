@@ -1,0 +1,41 @@
+<html>
+    <head><title>checkbox</title>
+        <script src=
+        "https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+   </script>
+    </head>
+<body>
+    <input type="checkbox" id="ele1" value="cricket" onclick="write1()"><label>Cricket</label><br/>
+    <input type="checkbox" id="ele2" value="FootBall" onclick="write2()"><label>FootBall</label><br/>
+    <input type="checkbox" id="ele3" value="Badminton" onclick="write3()"><label>Badminton</label><br/>
+    <input type="checkbox" id="ele4" value="tabletennis" onclick="write4()"><label>tabletennis</label><br/>
+    <button type="button" onclick="ANS()">click here.</button>
+    
+    <p id="elements">
+    </p>
+    
+    <script>
+        ans=new Array();
+        function write1(){
+            ans[0]=document.getElementById('ele1').value;
+        } 
+        function write2(){
+            ans[1]=document.getElementById('ele2').value;
+        } 
+        function write3(){
+            ans[2]=document.getElementById('ele3').value;
+        } 
+        function write4(){
+            ans[3]=document.getElementById('ele4').value;
+        }
+
+        function ANS(){
+            for(temp of ans);
+            document.getElementById('elements').innerHTML = (ans+",")
+        }
+        
+        
+    </script>
+
+</body>
+</html>

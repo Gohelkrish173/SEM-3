@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>max value in array</title>
+	</head>
+<body>
+	<script>
+	var a=new Array(2,3,7,8,5,6,4,10);
+	console.log(a);
+
+	let min=a[0];
+	let max=a[0];
+	let n=a.length;
+	
+	for(let i=1;i<n;i++){
+		if(min<a[i]){}
+		else{
+			min=a[i];
+		}
+	}
+	console.log("minimum value of array:"+min);
+
+	for(let i=1;i<n;i++){
+		if(max>a[i]){}
+		else{
+			max=a[i];
+		}
+	}
+	console.log("maximum value of arrya:"+max);
+	</script>
+</body>
+</html>

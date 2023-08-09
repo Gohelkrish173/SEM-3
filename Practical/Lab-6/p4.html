@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>
+            form event
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+<body align="center">
+    <form>
+    <h1>Enter a Element</h1>
+    <input type="text" class="container col-3" id="txt1" onchange="change()" oncontextmenu="contentmenu()" onfocus="focas()" oninput="oinput()" onblur="bloor()"
+    oninvalid="oinvaid()" onselect="oselect()">
+    
+    <input type="submit" class="btn btn-primary container col-3" value="submit" onselect="oselect" oninvalid="oinvaid()" oncontextmenu="contentmenu()"
+     >
+    
+     <input type="reset" class="btn btn-primary container col-3" value="reset" onselect="oselect" oninvalid="oinvaid()" oncontextmenu="contentmenu()"
+     >
+
+    <script>
+        function change(){
+            console.log("textbox element is changed.");
+        }
+        function bloor(){
+            console.log("element is loses focus.");
+        }
+        function contentmenu(){
+            console.log("content menu is triggered.");
+        }
+
+        function oinput(){
+            console.log("element is inserted.");
+        }
+        function focas(){
+            console.log("element is focused.");
+        }
+        function oinvalid(){
+            console.log("element is invalid");
+        }
+        function oselect(){
+            console.log("element is selected.");
+        }
+        function sub(){
+            console.log("element is submited.");
+        }
+        function rest(){
+            document.getElementById("txt1").Value("");
+        }
+    </script>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+    <head><title>mouseevents</title></head>
+<body>
+    <button onclick="check1(event)">click it.</button>
+    <p id="demo"></p>
+    <script>
+        document.onmousedown = check1;
+
+        function check1(event){
+            if(event.button == 0){
+                alert("left clicked.");
+            }
+            else if(event.button == 1){
+                alert("middle clicked.");
+            }
+            else if(event.button == 2){
+                alert("Right clicked.")
+            }
+        }
+    </script>
+</body>
+</html>

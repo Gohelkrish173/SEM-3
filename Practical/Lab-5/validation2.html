@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title>Validation Form</title>
+    </head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .btn{
+            margin-top: 10px;
+        }
+    </style>
+<body>
+    <div class="container col-3">
+        <h1>Login In</h1>
+        <h6>Username:</h6>
+        <input type="text" id="txtName1" onchange="change()">
+        <h6>Password: </h6>
+        <input type="password" id="txtName2"></br>
+        <h6>Repeat Password:</h6>
+        <input type="password" id="txtName3"></br>
+        <h6>Date OF Birth</h6>
+        <input type="date" id="date1"></br>
+        <h6>Age</h6>
+        <input type="text" id="year">
+        <h6>ENR. NO.:</h6>
+        <input type="text" id="txtName4">
+        <h6>Email Id:</h6>
+        <input type="text" id="txtName5" onsubmit="sub()"></br> 
+        <input type="button" class="btn btn-primary" id="butten" onclick="checkMail()" value="Login">
+    </div>
+        <script>
+            function checkMail(){
+            var name1=document.getElementById("txtName1").value;
+            var name2=document.getElementById("txtName2").value;
+            var name3=document.getElementById("txtName3").value;
+            var d1=date.getFullYear(name3);
+            var d2=date.now();
+            var d=d2-d1;
+                year.value=d;
+            var enr=document.getElementById("txtName4").value;    
+            var email=document.getElementById("txtName5").value;
+
+            pattern1="[A-Za-z]*[^0-9]"
+            pattern2="[[A-Za-z]*[0-9]+[!@#]]{8,12}"
+            pattern3="22010101[0-9]{3}";
+            pattern4="[A-Za-z0-9]*[@]gmail\\.com";
+            var R1=RegExp(pattern1);
+            var R2=RegExp(pattern2);
+            var R3=RegExp(pattern3);
+            var R4=RegExp(pattern4);
+
+            if(R1.test(name1)){
+                txtName1.style.border="5px solid green";
+            }
+            else{
+                txtName1.style.border="5px solid red";
+            }
+
+            if(R2.test(name2)){
+                txtName2.style.border="5px solid green";
+            }
+            else{
+                txtName2.style.border="5px solid red";
+            }
+            if(name2==name3){
+                txtName3.style.border="5px solid green";
+            }
+            else{
+                txtName3.style.border="5px solid red";
+            }
+            if(R3.test(enr)){
+                txtName4.style.border="5px solid green";         
+            }
+            else{
+                txtName4.style.border="5px solid red";
+            }
+            if(R4.test(email)){
+                txtName5.style.border="5px solid green";         
+            }
+            else{
+                txtName5.style.border="5px solid red";
+            }
+                
+        }
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
